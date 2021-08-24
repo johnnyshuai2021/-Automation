@@ -2,10 +2,11 @@
 """
 Author: 钟欣琪
 Date: 2020-8-04
-Remarks: conftest配置文件（自定义fixtrue）
+Remarks: contest配置文件（自定义fixture）
 """
 
-import pytest, logging
+import pytest
+import logging
 from selenium import webdriver
 from Config.settings import GLOBAL_PARAMS
 
@@ -32,8 +33,9 @@ def pytest_sessionfinish(session):
         f.write(f'WEB_NAME={GLOBAL_PARAMS[0]["WEB_NAME"]}\nWEB_VERSION={GLOBAL_PARAMS[0]["web_version"]}'
                 f'\nBROWSER_NAME={GLOBAL_PARAMS[0]["BROWSER_NAME"]}\nSELENIUM_VERSION={GLOBAL_PARAMS[0]["SELENIUM_VERSION"]}')
 
+    # 实时日志
 
-# 实时日志
+
 @pytest.fixture(scope='session')
 def log():
     yield logging.getLogger()

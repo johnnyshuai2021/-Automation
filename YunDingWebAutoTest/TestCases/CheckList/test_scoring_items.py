@@ -51,7 +51,7 @@ class TestAddScoringItems:
 
         items = GLOBAL_PARAMS[0]['common_text']
         items_name = items + random_string(7)
-        score = GLOBAL_PARAMS[0]['score']
+           score = GLOBAL_PARAMS[0]['score']
         with allure.step("绕过登录页面"):
             check_list = CheckList(driver_setup)
             check_list.checker(driver_setup, log)
